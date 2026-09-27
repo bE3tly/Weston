@@ -1,0 +1,6 @@
+{
+  "name": "Weston Invests Wealth Calculator",
+  "description": "Interactive wealth projection calculator based on compound interest.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

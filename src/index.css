@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-charcoal: #0a0f0d;
+  --color-gold: #c9a15a;
+  --color-emerald-deep: #1f6b4f;
+}
+
+@layer base {
+  body { @apply font-sans bg-charcoal text-white; }
+  h1, h2, h3, h4 { @apply font-serif; }
+}
+
+/* Brevo Form Styles */
+@font-face {
+  font-display: block;
+  font-family: Roboto;
+  src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: Roboto;
+  font-weight: 600;
+  src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: Roboto;
+  font-weight: 700;
+  src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+}
+
+:where(.sib-form-message-panel) {
+  display: none;
+}
+
+:where(.sib-form-message-panel .sib-notification__icon) {
+  width: 20px;
+  height: 20px;
+}
+
+#sib-container input:-ms-input-placeholder {
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container input::placeholder {
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container textarea::placeholder {
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container a {
+  text-decoration: underline;
+  color: #2BB2FC;
+}
+
+.gradient-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #0a0f0d;
+  background-image: radial-gradient(at 10% 10%, #1f6b4f 0px, transparent 50%),
+                    radial-gradient(at 90% 90%, #c9a15a 0px, transparent 50%);
+  opacity: 0.15;
+  animation: drift 25s infinite alternate ease-in-out;
+}
+
+@keyframes drift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
