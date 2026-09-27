@@ -12,6 +12,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ChevronUp, LineChart as ChartIcon, Check, Lock, ArrowDown, Sparkles, ArrowLeftRight } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
+import FAQ from './components/FAQ';
 import UnlockReport from './components/UnlockReport';
 
 export default function App() {
@@ -147,22 +148,25 @@ export default function App() {
   return (
     <div className="min-h-screen text-white selection:bg-gold/30">
       <div className="gradient-mesh" />
-      <header className="py-20 px-6">
-        <div className="max-w-3xl mx-auto flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full border border-neutral-700 overflow-hidden shrink-0">
-            <div 
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: 'url(https://i.postimg.cc/8z4PqYSQ/518094566-1790413134729661.jpg)' }} 
-            />
+      <header className="py-12 px-6">
+        <div className="max-w-3xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full border border-neutral-800 overflow-hidden shrink-0">
+              <div 
+                className="w-full h-full bg-cover bg-center"
+                style={{ backgroundImage: 'url(https://i.postimg.cc/8z4PqYSQ/518094566-1790413134729661.jpg)' }} 
+              />
+            </div>
+            <h1 className="text-xl font-bold font-serif tracking-tight">
+              <span className="text-white">Weston</span>
+              <span className="text-gold ml-1">Invests</span>
+            </h1>
           </div>
-          <h1 className="text-2xl font-bold font-serif">
-            <span className="text-white">Weston</span>
-            <span className="text-gold ml-1">Invests</span>
-          </h1>
+          <span className="text-neutral-500 text-sm font-medium">Blueprint</span>
         </div>
-        <div className="max-w-3xl mx-auto mt-12 text-center">
-            <h1 className="text-5xl font-bold mb-4">See When Your Money Starts Changing Your Life</h1>
-            <p className="text-xl text-neutral-300 max-w-2xl mx-auto">Enter your numbers and see your estimated path to $100K, $250K, $500K, $1M and beyond.</p>
+        <div className="max-w-2xl mx-auto mt-16 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-5 font-serif tracking-tight leading-tight">See When Your Money Starts Changing Your Life</h1>
+            <p className="text-lg text-neutral-400 max-w-xl mx-auto leading-relaxed">Enter your numbers and see your estimated path to $100K, $250K, $500K, $1M and beyond.</p>
         </div>
       </header>
 
@@ -175,17 +179,19 @@ export default function App() {
               exit={{ y: 100 }}
               className="fixed bottom-0 left-0 right-0 p-4 z-50"
             >
-              <div className="max-w-3xl mx-auto bg-neutral-900 border-t border-neutral-700 shadow-2xl rounded-2xl p-4 flex items-center justify-between gap-4">
-                <div>
-                  <p className="font-bold">Weston Wealth Blueprint</p>
-                  <p className="text-xs text-neutral-400">$15 Founding Price</p>
+              <div className="max-w-3xl mx-auto bg-neutral-900 border border-neutral-800 shadow-2xl rounded-2xl p-3 flex items-center justify-between gap-3">
+                <div className='truncate'>
+                  <p className="font-bold text-sm">Weston Wealth Blueprint</p>
+                  <p className="text-[10px] text-neutral-400">$15 Founding Price</p>
                 </div>
-                <div className='flex items-center gap-4'>
-                  <a href="https://payhip.com/b/yGO60" target="_blank" rel="noopener noreferrer" className="bg-linear-to-r from-emerald-deep to-gold text-white font-bold py-2 px-6 rounded-full text-sm">
+                <div className='flex items-center gap-3'>
+                  <a href="https://payhip.com/b/yGO60" target="_blank" rel="noopener noreferrer" className="bg-linear-to-r from-emerald-deep to-gold text-white font-bold py-1.5 px-4 rounded-full text-xs">
                     VIEW BLUEPRINT
                   </a>
                   <button onClick={() => setIsDismissed(true)} className="text-neutral-500 hover:text-white">
-                    <Check className='rotate-45' />
+                    <div className='w-5 h-5 flex items-center justify-center rounded-full bg-neutral-800'>
+                        <Check className='rotate-45 w-3 h-3' />
+                    </div>
                   </button>
                 </div>
               </div>
@@ -498,6 +504,8 @@ export default function App() {
                   <p className="text-center text-neutral-600 text-xs mt-2">Educational products only. Not financial advice.</p>
               </div>
               
+              <FAQ />
+
               <div className="mt-20 max-w-2xl mx-auto mb-20 bg-neutral-900/50 border border-neutral-700/50 rounded-[24px] p-8">
                 <h2 className="text-4xl font-bold font-serif text-center mb-2">You Already Know the Numbers. Now Build the Plan.</h2>
                 <p className="text-neutral-400 text-center mb-8">Turn your Wealth Report into a system you can follow month after month.</p>
